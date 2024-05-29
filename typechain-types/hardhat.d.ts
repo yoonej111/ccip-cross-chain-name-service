@@ -37,13 +37,13 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ConfirmedOwnerWithProposal__factory>;
     getContractFactory(
-      name: "OwnableInterface",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OwnableInterface__factory>;
-    getContractFactory(
       name: "OwnerIsCreator",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OwnerIsCreator__factory>;
+    getContractFactory(
+      name: "IOwnable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IOwnable__factory>;
     getContractFactory(
       name: "IERC165",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -64,42 +64,6 @@ declare module "hardhat/types/runtime" {
       name: "ICrossChainNameServiceLookup",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ICrossChainNameServiceLookup__factory>;
-    getContractFactory(
-      name: "CCIPReceiver",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CCIPReceiver__factory>;
-    getContractFactory(
-      name: "IAny2EVMMessageReceiver",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IAny2EVMMessageReceiver__factory>;
-    getContractFactory(
-      name: "IRouterClient",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IRouterClient__factory>;
-    getContractFactory(
-      name: "Client",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Client__factory>;
-    getContractFactory(
-      name: "OwnerIsCreator",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OwnerIsCreator__factory>;
-    getContractFactory(
-      name: "ConfirmedOwner",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ConfirmedOwner__factory>;
-    getContractFactory(
-      name: "ConfirmedOwnerWithProposal",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ConfirmedOwnerWithProposal__factory>;
-    getContractFactory(
-      name: "OwnableInterface",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OwnableInterface__factory>;
-    getContractFactory(
-      name: "IERC165",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC165__factory>;
 
     getContractAt(
       name: "CCIPReceiver",
@@ -132,15 +96,15 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.ConfirmedOwnerWithProposal>;
     getContractAt(
-      name: "OwnableInterface",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OwnableInterface>;
-    getContractAt(
       name: "OwnerIsCreator",
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.OwnerIsCreator>;
+    getContractAt(
+      name: "IOwnable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IOwnable>;
     getContractAt(
       name: "IERC165",
       address: string,
@@ -166,51 +130,6 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.ICrossChainNameServiceLookup>;
-    getContractAt(
-      name: "CCIPReceiver",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CCIPReceiver>;
-    getContractAt(
-      name: "IAny2EVMMessageReceiver",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IAny2EVMMessageReceiver>;
-    getContractAt(
-      name: "IRouterClient",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IRouterClient>;
-    getContractAt(
-      name: "Client",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Client>;
-    getContractAt(
-      name: "OwnerIsCreator",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OwnerIsCreator>;
-    getContractAt(
-      name: "ConfirmedOwner",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ConfirmedOwner>;
-    getContractAt(
-      name: "ConfirmedOwnerWithProposal",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ConfirmedOwnerWithProposal>;
-    getContractAt(
-      name: "OwnableInterface",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OwnableInterface>;
-    getContractAt(
-      name: "IERC165",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IERC165>;
 
     // default types
     getContractFactory(

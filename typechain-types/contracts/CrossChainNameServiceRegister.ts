@@ -31,7 +31,7 @@ export interface CrossChainNameServiceRegisterInterface
   extends utils.Interface {
   functions: {
     "acceptOwnership()": FunctionFragment;
-    "enableChain(uint64,address,bool,uint256)": FunctionFragment;
+    "enableChain(uint64,address,uint256)": FunctionFragment;
     "i_lookup()": FunctionFragment;
     "i_router()": FunctionFragment;
     "owner()": FunctionFragment;
@@ -63,7 +63,6 @@ export interface CrossChainNameServiceRegisterInterface
     values: [
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<string>,
-      PromiseOrValue<boolean>,
       PromiseOrValue<BigNumberish>
     ]
   ): string;
@@ -173,7 +172,6 @@ export interface CrossChainNameServiceRegister extends BaseContract {
     enableChain(
       chainSelector: PromiseOrValue<BigNumberish>,
       ccnsReceiverAddress: PromiseOrValue<string>,
-      strict: PromiseOrValue<boolean>,
       gasLimit: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -193,10 +191,9 @@ export interface CrossChainNameServiceRegister extends BaseContract {
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<
-      [BigNumber, string, boolean, BigNumber] & {
+      [BigNumber, string, BigNumber] & {
         chainSelector: BigNumber;
         ccnsReceiverAddress: string;
-        strict: boolean;
         gasLimit: BigNumber;
       }
     >;
@@ -219,7 +216,6 @@ export interface CrossChainNameServiceRegister extends BaseContract {
   enableChain(
     chainSelector: PromiseOrValue<BigNumberish>,
     ccnsReceiverAddress: PromiseOrValue<string>,
-    strict: PromiseOrValue<boolean>,
     gasLimit: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -239,10 +235,9 @@ export interface CrossChainNameServiceRegister extends BaseContract {
     arg0: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<
-    [BigNumber, string, boolean, BigNumber] & {
+    [BigNumber, string, BigNumber] & {
       chainSelector: BigNumber;
       ccnsReceiverAddress: string;
-      strict: boolean;
       gasLimit: BigNumber;
     }
   >;
@@ -263,7 +258,6 @@ export interface CrossChainNameServiceRegister extends BaseContract {
     enableChain(
       chainSelector: PromiseOrValue<BigNumberish>,
       ccnsReceiverAddress: PromiseOrValue<string>,
-      strict: PromiseOrValue<boolean>,
       gasLimit: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -283,10 +277,9 @@ export interface CrossChainNameServiceRegister extends BaseContract {
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<
-      [BigNumber, string, boolean, BigNumber] & {
+      [BigNumber, string, BigNumber] & {
         chainSelector: BigNumber;
         ccnsReceiverAddress: string;
-        strict: boolean;
         gasLimit: BigNumber;
       }
     >;
@@ -330,7 +323,6 @@ export interface CrossChainNameServiceRegister extends BaseContract {
     enableChain(
       chainSelector: PromiseOrValue<BigNumberish>,
       ccnsReceiverAddress: PromiseOrValue<string>,
-      strict: PromiseOrValue<boolean>,
       gasLimit: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -370,7 +362,6 @@ export interface CrossChainNameServiceRegister extends BaseContract {
     enableChain(
       chainSelector: PromiseOrValue<BigNumberish>,
       ccnsReceiverAddress: PromiseOrValue<string>,
-      strict: PromiseOrValue<boolean>,
       gasLimit: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;

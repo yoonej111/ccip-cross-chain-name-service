@@ -17,7 +17,6 @@ contract CrossChainNameServiceRegister is OwnerIsCreator {
         // --- slot 0 ---
         uint64 chainSelector;
         address ccnsReceiverAddress;
-        bool strict;
         // --- slot 1 ---
         uint256 gasLimit;
     }
@@ -44,14 +43,12 @@ contract CrossChainNameServiceRegister is OwnerIsCreator {
     function enableChain(
         uint64 chainSelector,
         address ccnsReceiverAddress,
-        bool strict,
         uint256 gasLimit
     ) external onlyOwner {
         s_chains.push(
             Chain({
                 chainSelector: chainSelector,
                 ccnsReceiverAddress: ccnsReceiverAddress,
-                strict: strict,
                 gasLimit: gasLimit
             })
         );
@@ -68,10 +65,7 @@ contract CrossChainNameServiceRegister is OwnerIsCreator {
                 data: abi.encode(_name, msg.sender),
                 tokenAmounts: new Client.EVMTokenAmount[](0),
                 extraArgs: Client._argsToBytes(
-                    Client.EVMExtraArgsV1({
-                        gasLimit: currentChain.gasLimit,
-                        strict: currentChain.strict
-                    })
+                    Client.EVMExtraArgsV1({gasLimit: currentChain.gasLimit})
                 ),
                 feeToken: address(0) // We leave the feeToken empty indicating we'll pay raw native.
             });
